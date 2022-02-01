@@ -1,0 +1,44 @@
+<p class="content-p">
+    <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseExample">
+      Top Rated 
+    </button>
+  </p>
+  <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+    <div class="card">
+      <div class="card-body">
+        Top Rated Categories and Sellers that help you to choose the best Stuff.
+      </div>
+    </div>
+  </div>
+
+<div class="d-flex">
+    <ul ngbNav #nav="ngbNav" class="nav-pills" orientation="vertical">
+      <li ngbNavItem="top">
+        <a ngbNavLink>Top Sellers </a>
+        <ng-template ngbNavContent>
+          <p>
+           <li> Arbab Iftikhar</li>
+           <li> Shehzad Asadullah</li>
+           <li> Muhammad Asim</li>
+           <li> Haris Manzoor</li>
+           <li> Codeaza</li>
+          </p>
+        </ng-template>
+      </li>
+      <li ngbNavItem="middle">
+        <a ngbNavLink>Top Categories</a>
+        <ng-template ngbNavContent>
+        <p> 
+            <li> Shirt's</li>
+            <li> Jacket's</li>
+            <li> Shoe's </li>
+         </p>
+        </ng-template>
+      </li>
+     
+    </ul>
+  
+    <div [ngbNavOutlet]="nav" class="ml-4"></div>
+  </div>
+  
